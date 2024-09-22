@@ -9,7 +9,7 @@
   <h1>Hello, World!</h1>
   <h1>Static Web Apps Database Connections</h1>
   <blockquote>
-    Open the console in the browser developer tools to see the API responses.
+    Open the console in the browser developer tools (F12) to see the API responses.
   </blockquote>
   <div>
     <button id="list" onclick="list()">List</button>
@@ -25,7 +25,7 @@
       const data = await response.json();
       console.table(data.value);
     }
-    
+
     async function get() {
       const id = 1;
       const endpoint = `/data-api/rest/Person/Id`;
