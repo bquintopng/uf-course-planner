@@ -29,15 +29,77 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <h1>Static Web Apps Database Connections</h1>
+    <blockquote>
+      Open the console in the browser developer tools (F12) to see the API responses.
+    </blockquote>
+    <div>
+      <button id="list" onclick="list()">List</button>
+      <button id="get" onclick="get()">Get</button>
+      <button id="update" onclick="update()">Update</button>
+      <button id="create" onclick="create()">Create</button>
+      <button id="delete" onclick="del()">Delete</button>
+    </div>
+    <script>
+      async function list() {
+        const endpoint = '/data-api/rest/Person';
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        console.table(data.value);
+      }
+  
+      async function get() {
+        const id = 1;
+        const endpoint = `/data-api/rest/Person/Id`;
+        const response = await fetch(`${endpoint}/${id}`);
+        const result = await response.json();
+        console.table(result.value);
+      }
+  
+      async function update() {
+        const id = 1;
+        const data = {
+          Name: "Molly"
+        };
+  
+        const endpoint = '/data-api/rest/Person/Id';
+        const response = await fetch(`${endpoint}/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        console.table(result.value);
+      }
+  
+      async function create() {
+        const data = {
+          Name: "Pedro"
+        };
+  
+        const endpoint = `/data-api/rest/Person/`;
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        console.table(result.value);
+      }
+  
+      async function del() {
+        const id = 3;
+        const endpoint = '/data-api/rest/Person/Id';
+        const response = await fetch(`${endpoint}/${id}`, {
+          method: "DELETE"
+        });
+        if(response.ok) {
+          console.log(`Record deleted: ${ id }`)
+        } else {
+          console.log(response);
+        }
+      }
+  
+    </script>
   </body>
 </html>

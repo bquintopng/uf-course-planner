@@ -20,7 +20,7 @@
     "host": {
       "mode": "production",
       "cors": {
-        "origins": ["http://localhost:4280", "https://ufcourseplanner.ryanlu.dev/", "https://yellow-island-0d0b3260f.5.azurestaticapps.net"],
+        "origins": ["http://localhost:4280", "https://ufcourseplanner.ryanlu.dev/", "https://delightful-tree-05363c61e.5.azurestaticapps.net"],
         "allow-credentials": false
       },
       "authentication": {
