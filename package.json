@@ -7,7 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^18.2.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
@@ -32,6 +32,6 @@
     ]
   },
   "engines": {
-    "node": ">=20.18.0"
+    "node": ">=20.15.1"
   }
 }
