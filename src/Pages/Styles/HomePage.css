@@ -1,0 +1,44 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.widget-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.widget {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+    .widget h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+
+    .widget p {
+        color: #7f8c8d;
+    }
+
+.widget-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .widget-button:hover {
+        background-color: #2980b9;
+    }
