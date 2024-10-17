@@ -1,58 +1,89 @@
+/* Layout container */
 .layout-container {
     display: flex;
-    flex-direction: column;
     height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Full width when expanded */
+    background-color: #00529b;
+    color: white;
+    transition: width 0.3s ease; /* Smooth transition for collapse/expand */
+    overflow: hidden;
+}
+
+    .sidebar.collapsed {
+        width: 60px; /* Reduced width when collapsed */
+    }
+
+/* Collapse button */
+.toggle-btn {
+    background-color: #dd661e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+}
+
+.sidebar.collapsed .toggle-btn {
     text-align: center;
+    padding: 10px 0;
 }
 
-.layout-header {
-    background-color: #f0f8ff;
-    padding: 20px;
-}
-
-    .layout-header h1 {
-        margin: 0;
-        font-size: 2.5em;
-        color: #2c3e50;
-    }
-
-/* Menu Styles */
-.menu ul {
+/* Menu list */
+.menu-list {
     list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
+    padding: 20px 0;
+    margin: 0;
 }
 
-    .menu ul li {
-        margin: 0 15px;
+    .menu-list li {
+        margin: 20px 0;
     }
 
-        .menu ul li a {
+        .menu-list li a {
+            color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            color: #3498db;
-            padding: 5px 10px;
-            border: 1px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
+            padding: 10px 20px;
+            display: block;
         }
 
-            .menu ul li a:hover {
-                border-color: #3498db;
-                color: #2980b9;
+            .menu-list li a:hover {
+                background-color: #34495e;
+                border-radius: 4px;
             }
 
-/* Main Content */
-.layout-content {
-    flex: 1;
+/* Content area styles */
+.content {
+    margin-left: 250px; /* Leave space for the sidebar */
     padding: 20px;
+    width: calc(100% - 250px); /* Adjust width */
+    transition: margin-left 0.3s, width 0.3s;
+}
+.highlight-uf {
+    color: #00529b
 }
 
-/* Footer Styles */
+.sidebar.collapsed ~ .content {
+    margin-left: 40px; /* Adjust margin when sidebar is collapsed */
+    width: calc(100% - 40px); /* Adjust content width when collapsed */
+}
+
+/* Header and Footer styles */
+.layout-header, .layout-footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .layout-footer {
-    background-color: #f0f8ff;
-    padding: 10px;
-    font-size: 0.9em;
-    color: #7f8c8d;
+    margin-top: 20px;
+    font-size: 14px;
 }
