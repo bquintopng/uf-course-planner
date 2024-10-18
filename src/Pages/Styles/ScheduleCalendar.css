@@ -1,0 +1,28 @@
+.schedule-calendar {
+    text-align: center;
+    padding: 20px;
+}
+
+.rbc-calendar {
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+}
+
+.rbc-event {
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+    .rbc-event .rbc-event-content {
+        font-size: 0.9em;
+    }
+
+.rbc-toolbar {
+    background-color: #f9f9f9;
+}
+
+.rbc-time-view .rbc-time-content {
+    border-top: 2px solid #ddd;
+}
